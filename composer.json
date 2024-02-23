@@ -1,0 +1,22 @@
+{
+    "name": "custatus/clickup-status-plugin",
+    "type": "wordpress-plugin",
+    "autoload": {
+        "psr-4": {
+            "CUSTATUS\\ClickUpStatusPlugin\\": "src/"
+        }
+    },
+    "require": {
+        "composer/installers": "^1.11"
+    },
+    "extra": {
+        "installer-paths": {
+            "src/{$name}/": ["type:wordpress-plugin"]
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true
+        }
+    }
+}
