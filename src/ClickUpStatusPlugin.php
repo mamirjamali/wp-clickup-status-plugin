@@ -1,39 +1,39 @@
 <?php
 
-namespace CUSTATUS\ClickUpStatusPlugin;
+namespace IBD\ClickUpStatusPlugin;
 
 require_once CSP_PLUGIN_DIR . '/vendor/autoload.php';
 
 // Import necessary classes
-use CUSTATUS\ClickUpStatusPlugin\ClickUpDatabase;
-use CUSTATUS\ClickUpStatusPlugin\ScriptEnqueuer;
-use CUSTATUS\ClickUpStatusPlugin\AjaxHandler;
-use CUSTATUS\ClickUpStatusPlugin\ClickUpApi;
-use CUSTATUS\ClickUpStatusPlugin\ContactFormHandler; // Add this line
+use IBD\ClickUpStatusPlugin\ClickUpDatabase;
+use IBD\ClickUpStatusPlugin\ScriptEnqueuer;
+use IBD\ClickUpStatusPlugin\AjaxHandler;
+use IBD\ClickUpStatusPlugin\GravityFormHandler; 
+use IBD\ClickUpStatusPlugin\AdminSettings; 
 
 
 class ClickUpStatusPlugin {
     public function __construct() {
+        // Initialize AdminSettings
+        $admin_settings = new AdminSettings();
+        
         // Enqueue script
         ScriptEnqueuer::enqueueCustomScript();
-        
+
         // Register AJAX handlers
-        $ajax_handler = new AjaxHandler(new ClickUpApi("//In the next version this will be retrive from Admin dashboard"), new ClickUpDatabase());
+        $ajax_handler = new AjaxHandler(new ClickUpDatabase());
         $ajax_handler->registerHandlers();
-        
-        // Initialize ContactFormHandler
-        $contact_form_handler = new ContactFormHandler(
-            new ClickUpApi("//In the next version this will be retrive from Admin dashboard"),
-            new ClickUpDatabase(),
-            new EmailSender()
-        );
+
+        // Initialize GravityFormHandler
+        $gravity_form_handler = new GravityFormHandler(new ClickUpDatabase(), new EmailSender());
+
 
         // Register shortcode
         add_shortcode('clickup_status_form', array($this, 'clickup_status_form_shortcode'));
 
     }
 
-    // Shortcode for the form that let users to track the requset
+    // Shortcode for the form
     function clickup_status_form_shortcode() {
         ob_start(); // Start output buffering
         ?>
@@ -56,12 +56,12 @@ class ClickUpStatusPlugin {
                              <input type="hidden" name="form_identifier" value="clickup_client_status">
 
                             <div class="col-auto">
-                                <label class="sr-only" for="user_email">Email:</label>
-                                <input type="email" name="user_email" class="form-control mb-2" id="user_email" placeholder="Email" required>
+                                <label class="sr-only" for="user_email">ایمیل:</label>
+                                <input type="email" name="user_email" class="form-control mb-2" id="user_email" placeholder="ایمیل" required>
                             </div>
                             <div class="col-auto">
-                                <label class="sr-only" for="hash_code">Tracking Code:</label>
-                                <input type="text" name="hash_code" class="form-control mb-2" id="hash_code" placeholder="Tracking Code" required>
+                                <label class="sr-only" for="hash_code">کد پیگیری:</label>
+                                <input type="text" name="hash_code" class="form-control mb-2" id="hash_code" placeholder="کد پیگیری" required>
                             </div>
                             <div class="col-auto">
                                 <button type="submit" name="submit" class="btn btn-primary mb-2 btn-align">Submit</button>
@@ -81,4 +81,3 @@ class ClickUpStatusPlugin {
 }
 
 $clickUpStatusPlugin = new ClickUpStatusPlugin();
-

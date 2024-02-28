@@ -1,5 +1,5 @@
 <?php
-namespace CUSTATUS\ClickUpStatusPlugin;
+namespace IBD\ClickUpStatusPlugin;
 
 class ClickUpDatabase {
     /**
@@ -17,6 +17,7 @@ class ClickUpDatabase {
                 email varchar(100) NOT NULL,
                 task_id varchar(100) NOT NULL,
                 hash_code varchar(20) NOT NULL,
+                form_id varchar(20) NOT NULL,
                 submission_time datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
                 PRIMARY KEY  (id)
             ) $charset_collate;";
@@ -33,7 +34,7 @@ class ClickUpDatabase {
      * @param string $clickUpId
      * @param string $hash
      */
-    public static function insertClickUpTaskData($email, $clickUpId, $hash) {
+    public static function insertClickUpTaskData($email, $clickUpId, $hash, $form_id) {
         global $wpdb;
         $table_name = $wpdb->prefix . 'clickup_tasks';
 
@@ -41,6 +42,7 @@ class ClickUpDatabase {
             'email' => $email,
             'task_id' => $clickUpId,
             'hash_code' => $hash,
+            'form_id' => $form_id,
             'submission_time' => current_time('mysql'),
         );
 
@@ -58,7 +60,9 @@ class ClickUpDatabase {
         global $wpdb;
         $table_name = $wpdb->prefix . 'clickup_tasks';
 
-        $query = $wpdb->prepare("SELECT task_id FROM $table_name WHERE email = %s AND hash_code = %s", $email, $hash);
-        return $wpdb->get_var($query);
+        $query = $wpdb->prepare("SELECT task_id, form_id FROM $table_name WHERE email = %s AND hash_code = %s", $email, $hash);
+        $results = $wpdb->get_results($query);
+
+        return $results;
     }
 }

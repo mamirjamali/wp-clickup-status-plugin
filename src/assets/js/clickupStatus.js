@@ -42,7 +42,6 @@ document.addEventListener("DOMContentLoaded", function () {
         // Check if orderIndex is a valid number
         if (Number.isInteger(orderIndex) && orderIndex >= 0) {
             // Return the container HTML if orderIndex is valid
-            // In the next version this will be retrive from Admin dashboard (The number of steps and the details for each step)
             return `
                 <div class="container-fluid">
                     <div class="row">
@@ -50,10 +49,13 @@ document.addEventListener("DOMContentLoaded", function () {
                             <div class="card">
                                 <div class="card-body">
                                         <ul class="list-vertical">
-                                            ${generateStepHtml(0, 'Step1', 'Details to show for each step.', status, assignee, orderIndex)}
-                                            ${generateStepHtml(1, 'Step2', 'Details to show for each step.', status, assignee, orderIndex)}
-                                            ${generateStepHtml(2, 'Step3', 'Details to show for each step.', status, assignee, orderIndex)}
-
+                                            ${generateStepHtml(0, 'شروع', 'مدارک شما دریافت شد و در حال بررسی می باشد', status, assignee, orderIndex)}
+                                            ${generateStepHtml(1, 'مرحله دوم', 'ارسال مدارک به مراجع اداری.', status, assignee, orderIndex)}
+                                            ${generateStepHtml(2, 'مرحله سوم', 'در حال مشاوره با تیم حقوقی', status, assignee, orderIndex)}
+                                            ${generateStepHtml(3, 'مرحله چهارم ', 'در حال ارزیابی مدارک برای ارسال به بخش بایگانی', status, assignee, orderIndex)}
+                                            ${generateStepHtml(4, 'مرحله پنجم ', 'تیم حقوقی مدارک شما را تایید کرد ', status, assignee, orderIndex)}
+                                            ${generateStepHtml(5, 'مرحله ششم ', 'کارت شهروندی شما دریافت شد برای دریافت به آدرس شرکت مراجعه فرمایید', status, assignee, orderIndex)}
+                                            ${generateStepHtml(6, 'مرحله هفتم ', 'پروسه ثبت شرکت شما با موفقیت به پایان رسید', status, assignee, orderIndex)}
                                         </ul>
                                 </div>
                             </div>
@@ -97,8 +99,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 '</div>' +
                     '<div class="full-width">' + 
                         '<p class="description">' + description + '</p>'+
-                        '<p><b>Status: ' + status + '</b></p>' +
-                        '<p><b>Assigne: ' + assignee + '</b></p>' +
+                        '<p><b>وضعیت: ' + status + '</b></p>' +
+                        '<p><b>در حال پیگیری توسط: ' + assignee + '</b></p>' +
                     '</div>' +
              '</div>'
                 :

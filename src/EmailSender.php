@@ -1,5 +1,5 @@
 <?php
-namespace CUSTATUS\ClickUpStatusPlugin;
+namespace IBD\ClickUpStatusPlugin;
 
 class EmailSender {
     /**
@@ -17,7 +17,7 @@ class EmailSender {
         $message = '
             <html>
             <body>
-                <p>کد پیگیری شما: </b></b><strong>' . $hash . '</strong></p>
+                <p>کد پیگیری شما: </br></br><strong>' . $hash . '</strong></p>
                 <button onclick="copyToClipboard(\'' . $hash . '\')">Copy</button>
                 <script>
                     function copyToClipboard(text) {
