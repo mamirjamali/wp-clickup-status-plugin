@@ -1,5 +1,5 @@
 <?php
-namespace IBD\ClickUpStatusPlugin;
+namespace CUSTATUS\ClickUpStatusPlugin;
 
 class ClickUpDatabase {
     /**
@@ -60,6 +60,8 @@ class ClickUpDatabase {
         global $wpdb;
         $table_name = $wpdb->prefix . 'clickup_tasks';
 
+        self::createClickUpTasksTable();
+        
         $query = $wpdb->prepare("SELECT task_id, form_id FROM $table_name WHERE email = %s AND hash_code = %s", $email, $hash);
         $results = $wpdb->get_results($query);
 

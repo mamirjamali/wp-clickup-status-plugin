@@ -17,5 +17,3 @@ define('CSP_PLUGIN_FILE', __FILE__);
 
 // Include Composer autoloader
 require_once CSP_PLUGIN_DIR. '/src/ClickUpStatusPlugin.php';
-
-

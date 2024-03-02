@@ -1,15 +1,15 @@
 <?php
 
-namespace IBD\ClickUpStatusPlugin;
+namespace CUSTATUS\ClickUpStatusPlugin;
 
 require_once CSP_PLUGIN_DIR . '/vendor/autoload.php';
 
 // Import necessary classes
-use IBD\ClickUpStatusPlugin\ClickUpDatabase;
-use IBD\ClickUpStatusPlugin\ScriptEnqueuer;
-use IBD\ClickUpStatusPlugin\AjaxHandler;
-use IBD\ClickUpStatusPlugin\GravityFormHandler; 
-use IBD\ClickUpStatusPlugin\AdminSettings; 
+use CUSTATUS\ClickUpStatusPlugin\ClickUpDatabase;
+use CUSTATUS\ClickUpStatusPlugin\ScriptEnqueuer;
+use CUSTATUS\ClickUpStatusPlugin\AjaxHandler;
+use CUSTATUS\ClickUpStatusPlugin\GravityFormHandler; 
+use CUSTATUS\ClickUpStatusPlugin\AdminSettings; 
 
 
 class ClickUpStatusPlugin {

@@ -1,9 +1,9 @@
 <?php
 
-namespace IBD\ClickUpStatusPlugin;
+namespace CUSTATUS\ClickUpStatusPlugin;
 
-use IBD\ClickUpStatusPlugin\ClickUpDatabase;
-use IBD\ClickUpStatusPlugin\ClickUpApi;
+use CUSTATUS\ClickUpStatusPlugin\ClickUpDatabase;
+use CUSTATUS\ClickUpStatusPlugin\ClickUpApi;
 
 class AjaxHandler {
 
@@ -41,19 +41,22 @@ class AjaxHandler {
 
         // Check if task_id exists before making API call
         if ($result->task_id) {
-            $response = $this->click_up_api->getTaskStatus($result->task_id, $api_key);
+            $response = $this->click_up_api->getTaskStatus($result->task_id);
             $decoded_response_task_status = json_decode($response, true);
 
-            $status = $decoded_response_task_status['status']['status'];
-            $orderIndex = $decoded_response_task_status['status']['orderindex'];
-            $assigneeUsername = $decoded_response_task_status['assignees'][0]['username']; // Assuming there is only one assignee
-    
-            // Respond with the task status (e.g., JSON)
-            wp_send_json_success(array(
-                'status' => $status,
-                'orderIndex' => $orderIndex,
-                'assigneeUsername' => $assigneeUsername,
-            ));
+            if(isset($decoded_response_task_status['status'])){
+
+                $status = $decoded_response_task_status['status']['status'];
+                $orderIndex = $decoded_response_task_status['status']['orderindex'];
+                $assigneeUsername = (isset($decoded_response_task_status['assignees'][0]) && isset($decoded_response_task_status['assignees'][0]['username'])) ?$decoded_response_task_status['assignees'][0]['username']: ''; // Assuming there is only one assignee
+        
+                // Respond with the task status (e.g., JSON)
+                wp_send_json_success(array(
+                    'status' => $status,
+                    'orderIndex' => $orderIndex,
+                    'assigneeUsername' => $assigneeUsername,
+                ));
+            }
         } 
         // Make sure to exit after sending the response
         exit();

@@ -1,6 +1,6 @@
 <?php
 
-namespace IBD\ClickUpStatusPlugin;
+namespace CUSTATUS\ClickUpStatusPlugin;
 
 class FileHandler {
     /**

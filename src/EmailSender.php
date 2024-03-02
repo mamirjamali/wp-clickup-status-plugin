@@ -1,5 +1,5 @@
 <?php
-namespace IBD\ClickUpStatusPlugin;
+namespace CUSTATUS\ClickUpStatusPlugin;
 
 class EmailSender {
     /**
