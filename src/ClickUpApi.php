@@ -87,7 +87,7 @@ class ClickUpApi {
     /**
      * Get task status from ClickUp API.
      *
-     * @param string $taskId
+     * @param string $task_id
      * @param string $api_key
      * @return string JSON response from ClickUp API
      */
