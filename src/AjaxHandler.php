@@ -4,6 +4,8 @@ namespace CUSTATUS\ClickUpStatusPlugin;
 
 use CUSTATUS\ClickUpStatusPlugin\ClickUpDatabase;
 use CUSTATUS\ClickUpStatusPlugin\ClickUpApi;
+use CUSTATUS\ClickUpStatusPlugin\Utils\ClickUpApiHelper;
+
 
 class AjaxHandler {
 
@@ -29,13 +31,30 @@ class AjaxHandler {
         $result = $this->click_up_database->getTaskIdByEmailAndHash($user_email, $hash_code);
         $result = isset($result[0]) ? $result[0]: '';
         $settings = $this->get_click_up_settings();
-
-        if (!$result || !isset($settings[$result->form_id])) {
-            wp_send_json_error(array('status' => "اطلاعات وارد شده اشتباه است."));
+        $form_id = $result->form_id;
+        
+        if (!$result || !isset($settings[$form_id])) {
+            wp_send_json_error(array(
+                                    'status' => 'false',
+                                    'response' => __("The entered values do not match", 'clickup-status-plugin')
+                                )
+                            );
         }
 
-        $api_key = $settings[$result->form_id]['setting']['api_key'];
-        $click_up_list_id = $settings[$result->form_id]['setting']['list_id'];
+        $api_key = $settings[$form_id]['setting']['api_key'];
+        $click_up_list_id = $settings[$form_id]['setting']['list_id'];
+        //Get all the statuses for the defined List ID
+        $statuses = ClickUpApiHelper::get_forms_statuses_detaile($api_key, $click_up_list_id);
+
+        if($statuses && !empty($statuses)){
+            foreach($statuses as $status){
+                $status_index = $status['orderindex'];
+                $statuses_name[$status_index]= array($status_index, $status['status']);
+            }
+        }else{
+            $status_index = '';
+            $statuses_name = '';
+        }
 
         $this->click_up_api = new ClickUpApi($api_key, $click_up_list_id);
 
@@ -48,13 +67,28 @@ class AjaxHandler {
 
                 $status = $decoded_response_task_status['status']['status'];
                 $orderIndex = $decoded_response_task_status['status']['orderindex'];
-                $assigneeUsername = (isset($decoded_response_task_status['assignees'][0]) && isset($decoded_response_task_status['assignees'][0]['username'])) ?$decoded_response_task_status['assignees'][0]['username']: ''; // Assuming there is only one assignee
-        
+                //Get Assignees
+                $assigneeUsername = (isset($decoded_response_task_status['assignees'][0]) && isset($decoded_response_task_status['assignees'][0]['username'])) ?$decoded_response_task_status['assignees'][0]['username']: '';
+
+                $form_statuses = $settings[$form_id]['statuses'];
+                
+                //Description has been stored as the second index for the status orderIndex
+                if (isset($form_statuses[$orderIndex]) &&  !empty($form_statuses[$orderIndex][1])){
+                    $description = $form_statuses[$orderIndex][1];
+                    // Replace placeholders csp-status-value and csp-assignee-value with actual values
+                    $description = str_replace(array('csp-status-value', 'csp-assignee-value' ), array($status, $assigneeUsername), $description);
+
+                }else{
+                    $description ='';
+                }
                 // Respond with the task status (e.g., JSON)
                 wp_send_json_success(array(
-                    'status' => $status,
-                    'orderIndex' => $orderIndex,
-                    'assigneeUsername' => $assigneeUsername,
+                    'status' => 'true',
+                    'response' => array(
+                        'orderIndex' => $orderIndex,
+                        'description' => $description,
+                        'clickupStatuses' => $statuses_name
+                    )
                 ));
             }
         } 
