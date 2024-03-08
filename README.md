@@ -19,12 +19,6 @@ This plugin integrates seamlessly with Gravity Forms, allowing you to automate t
 3. Specify the ClickUp space where tasks should be created.
 4. Enable the tracking feature to provide users with a tracking code.
 
-### Creating Tasks from Contact Form 7
-
-1. Ensure that the Contact Form 7 has the necessary fields configured.
-2. Users submitting the form will trigger the creation of a ClickUp task.
-3. A unique tracking code will be generated and provided to the user.
-
 ### Creating Tasks from Gravity Forms
 
 1. Ensure that the Gravity Form has the required fields set up.
