@@ -1,0 +1,342 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ClickUp Status Plugin\n"
+"POT-Creation-Date: 2024-03-07 15:46+0400\n"
+"PO-Revision-Date: 2024-03-07 15:47+0400\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: clickup-status-plugin.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: node_modules/@wordpress/style-engine/class-wp-style-engine-processor.php:44
+msgid "$store must be an instance of WP_Style_Engine_CSS_Rules_Store"
+msgstr ""
+
+#: src/Admin/GFAdminSettings.php:16 src/Admin/GFAdminSettings.php:17
+msgid "Click Up Status Settings"
+msgstr "إعدادات حالة Click Up"
+
+#: src/Admin/GFAdminSettings.php:27 src/Admin/GFAdminSettings.php:28
+msgid "GF Settings"
+msgstr "إعدادات GF"
+
+#: src/Admin/GFAdminSettings.php:59
+msgid "Add New Form"
+msgstr "إضافة نموذج جديد"
+
+#: src/Admin/GFAdminSettings.php:60
+msgid "Form ID"
+msgstr "معرف النموذج"
+
+#: src/Admin/GFAdminSettings.php:60
+msgid "Add Gravity Form ID"
+msgstr "إضافة معرف نموذج Gravity"
+
+#: src/Admin/GFAdminSettings.php:61
+msgid "API Key"
+msgstr "مفتاح API"
+
+#: src/Admin/GFAdminSettings.php:61
+msgid "Add Your ClickUP Personal API Key"
+msgstr "أضف مفتاح API الشخصي لـ ClickUP الخاص بك"
+
+#: src/Admin/GFAdminSettings.php:62
+msgid "List ID"
+msgstr "معرف القائمة"
+
+#: src/Admin/GFAdminSettings.php:62
+msgid "Add ClickUP List ID to send the form data to"
+msgstr "أضف معرف ClickUP List لإرسال بيانات النموذج إليه"
+
+#: src/Admin/GFAdminSettings.php:63
+msgid "Custom fields"
+msgstr "الحقول المخصصة"
+
+#: src/Admin/GFAdminSettings.php:63
+msgid ""
+"If your ClickUP account supports custom fields, you can enable this feature. "
+"Ensure that your field names match the custom fields, or they will be added "
+"to the description section."
+msgstr ""
+"إذا كان حساب ClickUP الخاص بك يدعم الحقول المخصصة ، يمكنك تمكين هذه الميزة. "
+"تأكد من أن أسماء الحقول الخاصة بك تتطابق مع الحقول المخصصة ، وإلا سيتم "
+"إضافتها إلى قسم الوصف."
+
+#: src/Admin/GFAdminSettings.php:64
+msgid "Send tracking code"
+msgstr "إرسال رمز التتبع"
+
+#: src/Admin/GFAdminSettings.php:64
+msgid ""
+"Enable sending email to the user to track the status of their request for "
+"this form"
+msgstr "تمكين إرسال بريد إلكتروني إلى المستخدم لتتبع حالة طلبهم لهذا النموذج"
+
+#: src/Admin/GFAdminSettings.php:65
+msgid "Email Field ID"
+msgstr "معرف حقل البريد الإلكتروني"
+
+#: src/Admin/GFAdminSettings.php:66
+msgid "GF Tracking Code Field (optional)"
+msgstr "GF رمز تتبع النموذج (اختياري)"
+
+#: src/Admin/GFAdminSettings.php:66
+msgid ""
+"To include the tracking code with form entries for display in the form "
+"entries settings, consider adding a hidden field to your form and placing "
+"the ID there."
+msgstr ""
+"لتضمين رمز التتبع مع إدخالات النموذج لعرضها في إعدادات إدخال النموذج ، يرجى "
+"إضافة حقلًا مخفيًا إلى نموذجك ووضع الهوية هناك."
+
+#: src/Admin/GFAdminSettings.php:67
+msgid "Add Form"
+msgstr "إضافة نموذج"
+
+#: src/Admin/GFAdminSettings.php:67
+msgid ""
+"If the form already exists, adding it again will update the settings in case "
+"any changes have been made."
+msgstr ""
+"إذا كان النموذج موجودًا بالفعل ، فإن إضافته مرة أخرى ستقوم بتحديث الإعدادات "
+"في حال أي تغييرات تمت."
+
+#: src/Admin/GFAdminSettings.php:83
+msgid "Fields to send to ClickUP for the added forms"
+msgstr "الحقول لإرسالها إلى ClickUP للنماذج المضافة"
+
+#: src/Admin/GFAdminSettings.php:84
+msgid ""
+"Note: Please be aware that Attachment fields and Custom fields must be sent "
+"individually, necessitating one request for each file and each field. This "
+"is due to ClickUP not supporting arrays for these types."
+msgstr ""
+"ملاحظة: يرجى أن تكون على علم بأن حقول المرفقات والحقول المخصصة يجب أن ترسل "
+"على حدة ، مما يستلزم طلبًا لكل ملف وكل حقل. يرجى العلم أن ClickUP لا يدعم "
+"المصفوفات لهذه الأنواع."
+
+#: src/Admin/GFAdminSettings.php:86 src/Admin/GFAdminSettings.php:153
+msgid "Field Name"
+msgstr "اسم الحقل"
+
+#: src/Admin/GFAdminSettings.php:86
+msgid ""
+"If you intend to save this field into Click UP custom fields, make sure to "
+"first enable the Custom Field option for the form, and second, enter the "
+"field name exactly matching the Custom Field name."
+msgstr ""
+"إذا كنت تنوي حفظ هذا الحقل في حقول Click UP المخصصة ، تأكد من تمكين خيار "
+"الحقل المخصص للنموذج أولاً ، وثانيًا ، أدخل اسم الحقل بالضبط متطابقًا مع اسم "
+"الحقل المخصص."
+
+#: src/Admin/GFAdminSettings.php:87 src/Admin/GFAdminSettings.php:156
+msgid "Field ID"
+msgstr "هوية الحقل"
+
+#: src/Admin/GFAdminSettings.php:87
+msgid ""
+"Enter the Field ID for the form where you want to save its data into Click UP"
+msgstr "أدخل هوية الحقل للنموذج حيث تريد حفظ بياناته في Click UP"
+
+#: src/Admin/GFAdminSettings.php:93
+#, php-format
+msgid "Form ID: %s"
+msgstr "هوية النموذج: %s"
+
+#: src/Admin/GFAdminSettings.php:96
+msgid "Select the form from the ones you have added here."
+msgstr "حدد النموذج من بين النماذج التي قد أضفتها هنا."
+
+#: src/Admin/GFAdminSettings.php:97
+msgid "Task Name"
+msgstr "اسم المهمة"
+
+#: src/Admin/GFAdminSettings.php:97
+msgid ""
+"Selecting this checkbox designates the field to be used as the Task Name in "
+"ClickUP. By default, the first field added to the form will be chosen as the "
+"Task Name. However, you can change it by selecting a different field when "
+"adding a new field. Ensure at least one field is designated as the Task Name."
+msgstr ""
+"بتحديد هذا الخانة يتم استخدام الحقل كاسم المهمة في ClickUP. بشكل افتراضي ، "
+"سيتم اختيار أول حقل يتم إضافته إلى النموذج كاسم مهمة. ومع ذلك ، يمكنك تغييره "
+"عند اختيار حقل مختلف عند إضافة حقل جديد. تأكد من تحديد حقل واحد على الأقل "
+"كاسم مهمة."
+
+#: src/Admin/GFAdminSettings.php:115
+msgid "Attachment"
+msgstr "المرفق"
+
+#: src/Admin/GFAdminSettings.php:115
+msgid "Mark the field as an attachment field"
+msgstr "قم بوضع علامة على الحقل كحقل مرفق"
+
+#: src/Admin/GFAdminSettings.php:116
+msgid "Add Field"
+msgstr "إضافة حقل"
+
+#: src/Admin/GFAdminSettings.php:116
+msgid ""
+"If the field already exists (add existing Field Name), adding it again will "
+"update the fields' data in case any changes have been made."
+msgstr ""
+"إذا كان الحقل موجودًا بالفعل (أضف اسم الحقل الحالي) ، فإن إضافته مرة أخرى "
+"ستقوم بتحديث بيانات الحقول في حال أي تغييرات تمت."
+
+#: src/Admin/GFAdminSettings.php:121
+msgid "Forms configuration overview and associated fields:"
+msgstr "نظرة عامة على تكوين النماذج والحقول المرتبطة:"
+
+#: src/Admin/GFAdminSettings.php:134 src/Admin/TFAdminSettings.php:54
+msgid "Form Configurations =>"
+msgstr "تكوين النماذج =>"
+
+#: src/Admin/GFAdminSettings.php:137 src/Admin/TFAdminSettings.php:57
+msgid "Form ID:"
+msgstr "معرف النموذج:"
+
+#: src/Admin/GFAdminSettings.php:140 src/Admin/TFAdminSettings.php:60
+msgid "List ID:"
+msgstr "معرف القائمة:"
+
+#: src/Admin/GFAdminSettings.php:143
+msgid "Task Name Field:"
+msgstr "حقل اسم المهمة:"
+
+#: src/Admin/GFAdminSettings.php:146
+msgid "Email Field:"
+msgstr "حقل البريد الإلكتروني:"
+
+#: src/Admin/GFAdminSettings.php:159
+msgid "Field Type"
+msgstr "نوع الحقل"
+
+#: src/Admin/GFAdminSettings.php:159
+msgid "Files type are either Attachment or Regular"
+msgstr "يمكن أن يكون نوع الملفات إما ملحق أو عادي"
+
+#: src/Admin/GFAdminSettings.php:162 src/Admin/TFAdminSettings.php:74
+msgid "Action"
+msgstr "عمل"
+
+#: src/Admin/GFAdminSettings.php:193
+msgid "Delete Field"
+msgstr "حذف الحقل"
+
+#: src/Admin/GFAdminSettings.php:198
+#, php-format
+msgid ""
+"%s <i class=\"fas fa-question-circle\" data-toggle=\"tooltip\" title=\"This "
+"field name is present in your ClickUP custom fields list with the defined "
+"Name.\"></i>"
+msgstr ""
+"%s <i class=\"fas fa-question-circle\" data-toggle=\"tooltip\" title=\"هذا "
+"الاسم الحقل موجود في قائمة حقولك المخصصة في ClickUP بالاسم المحدد.\"></i>"
+
+#: src/Admin/GFAdminSettings.php:226
+msgid "ClickUp Configuration"
+msgstr "تكوين ClickUp"
+
+#: src/Admin/GFAdminSettings.php:343
+msgid "Configure your ClickUp settings below."
+msgstr "قم بتكوين إعدادات ClickUp أدناه "
+
+#: src/Admin/TFAdminSettings.php:21 src/Admin/TFAdminSettings.php:22
+msgid "Tracking Form"
+msgstr "نموذج التتبع"
+
+#: src/Admin/TFAdminSettings.php:68
+msgid "Status"
+msgstr "الحالة"
+
+#: src/Admin/TFAdminSettings.php:71
+msgid "Description"
+msgstr "الوصف"
+
+#: src/Admin/TFAdminSettings.php:71
+msgid "Description to show in the frontend"
+msgstr "الوصف الذي يظهر في الواجهة الأمامية"
+
+#: src/Admin/TFAdminSettings.php:145
+msgid "Update Description"
+msgstr "تحديث الوصف"
+
+#: src/Admin/TFAdminSettings.php:164
+msgid "Configure your Tracking Form settings below."
+msgstr "قم بتكوين إعدادات نموذج التتبع أدناه."
+
+#: src/Admin/TFAdminSettings.php:165
+msgid "To edit the Tracking Form you should first add a form."
+msgstr "لتحرير نموذج التتبع، يجب عليك أولاً إضافة نموذج."
+
+#: src/Admin/TFAdminSettings.php:166
+msgid ""
+"You can define the description to display for each status in the tracking "
+"form."
+msgstr "يمكنك تحديد الوصف الذي سيظهر لكل حالة في نموذج التتبع."
+
+#: src/Admin/TFAdminSettings.php:167
+msgid ""
+"To make the description dynamic, use the following variables: {{status}} and "
+"{{assignee}}. For instance, you can create a dynamic description like this: "
+"\"Your status is {{status}} and is being investigated by {{assignee}}\". "
+"These variables will be replaced with actual values when displayed."
+msgstr ""
+"لجعل الوصف ديناميكيًا ، استخدم المتغيرات التالية: {{status}} و {{assignee}}. "
+"على سبيل المثال ، يمكنك إنشاء وصف ديناميكي مثل هذا: \"حالتك هي {{status}} "
+"وتمت المعاينة بواسطة {{assignee}}\". سيتم استبدال هذه المتغيرات بالقيم "
+"الفعلية عند العرض."
+
+#: src/Admin/TFAdminSettings.php:168
+#, fuzzy
+#| msgid ""
+#| "#In order to use this form add <b style=\"color: #8481f5;"
+#| "\">[clickup_status_form]</b> shortcode to your desire page."
+msgid ""
+"#In order to use this form add <b style=\"color: #8481f5;"
+"\">[clickup_status_form]</b> shortcode to your desired page."
+msgstr ""
+"#لاستخدام هذا النموذج ، أضف <b style=\"color: #8481f5;"
+"\">[clickup_status_form]</b> إلى الصفحة التي ترغب فيها."
+
+#: src/Admin/TFAdminSettings.php:185
+msgid "Tracking Form Settings"
+msgstr "إعدادات نموذج التتبع"
+
+#: src/AjaxHandler.php:39
+msgid "The entered values do not match"
+msgstr "القيم المدخلة لا تتطابق"
+
+#: src/ClickUpStatusForm.php:44
+msgid "Submit"
+msgstr "إرسال"
+
+#. Plugin Name of the plugin/theme
+msgid "ClickUp Status Plugin"
+msgstr "ClickUp Status Plugin"
+
+#. Description of the plugin/theme
+msgid ""
+"This plugin enable the admin to connect Gravity Forms to Click UP and let "
+"the users to track the status of the form they have submitted"
+msgstr ""
+"يمكن لهذا المكون الإضافي تمكين المسؤول من ربط Gravity Forms بـ Click UP "
+"والسماح للمستخدمين بتتبع حالة النموذج الذي قدموه"
+
+#. Author of the plugin/theme
+msgid "Amir Jamali"
+msgstr "أمير جمالي"
