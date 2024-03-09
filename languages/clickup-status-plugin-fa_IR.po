@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ClickUp Status Plugin\n"
-"POT-Creation-Date: 2024-03-07 15:44+0400\n"
-"PO-Revision-Date: 2024-03-07 15:45+0400\n"
+"POT-Creation-Date: 2024-03-09 12:22+0400\n"
+"PO-Revision-Date: 2024-03-09 12:23+0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fa_IR\n"
@@ -305,10 +305,6 @@ msgstr ""
 "مقادیر واقعی جایگزین می‌شوند هنگام نمایش."
 
 #: src/Admin/TFAdminSettings.php:168
-#, fuzzy
-#| msgid ""
-#| "#In order to use this form add <b style=\"color: #8481f5;"
-#| "\">[clickup_status_form]</b> shortcode to your desire page."
 msgid ""
 "#In order to use this form add <b style=\"color: #8481f5;"
 "\">[clickup_status_form]</b> shortcode to your desired page."
@@ -324,7 +320,7 @@ msgstr "تنظیمات فرم پیگیری"
 msgid "The entered values do not match"
 msgstr "اطلاعات وارد شده مطابقت ندارد"
 
-#: src/ClickUpStatusForm.php:44
+#: src/ClickUpStatusForm.php:56
 msgid "Submit"
 msgstr "ارسال"
 
